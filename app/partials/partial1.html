@@ -8,17 +8,8 @@
       <i class="fa fa-plus btn btn-dark"></i>
     </form>
     <ul class="todo-content">
-      <li class="todo-item">
-        <p><i class="fa fa-square"></i>Task Name</p>
-      </li>
-      <li class="todo-item">
-        <p><i class="fa fa-square"></i>Task Name</p>
-      </li>
-      <li class="todo-item">
-        <p><i class="fa fa-square"></i>Task Name</p>
-      </li>
-      <li class="todo-item">
-        <p><i class="fa fa-check-square"></i>Completed Task Name</p>
+      <li class="todo-item" ng-repeat="todo in todos" ng-click="T.complete(todo)">
+        <p><i class="fa" ng-class="{'fa-check-square': todo.complete, 'fa-square': !todo.complete}"></i>{{ todo.title }}</p>
       </li>
     </ul>
   </div>
