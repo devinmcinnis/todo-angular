@@ -9,8 +9,19 @@ angular.module('myApp.services', []).
   factory('Todos', function () {
     this.collection = [{
       title: 'Learn AngularJS',
-      completed: false
+      complete: false
     }];
+
+    this.addTask = function (todo, cb) {
+      var newTodo = {
+        title: todo,
+        complete: false
+      };
+
+      this.collection.push(newTodo);
+
+      cb(todo);
+    };
 
     return this;
   });

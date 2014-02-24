@@ -17,8 +17,14 @@ angular.module('myApp.controllers', []).
     this.complete = function (todo) {
       // Toggle 'completeness' of todo item
       todo.complete = (todo.complete === true) ? false : true;
-    }
+    };
+
+    this.addTask = function (todo) {
+      Todos.addTask(todo, function () {
+        $scope.newTask = '';
+      });
+    };
 
     return this;
 
-  }])
+  }]);

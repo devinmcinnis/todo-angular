@@ -3,12 +3,16 @@
     <header class="todo-head bg-dark">
       <h1>Todos</h1>
     </header>
-    <form class="input-group">
-      <input type="text" id="addTask" placeholder="What do you need to do?" required>
-      <i class="fa fa-plus btn btn-dark"></i>
+    <!--
+      "ng-submit" will override the default <form> action through AngularJS
+      We can now define an action on our Controller
+    -->
+    <form class="input-group" ng-submit="T.addTask(newTask)">
+      <input type="text" id="addTask" placeholder="What do you need to do?" required ng-model="newTask">
+      <i class="fa fa-plus btn btn-dark" ng-click="T.addTask(newTask)"></i>
     </form>
     <ul class="todo-content">
-      <li class="todo-item" ng-repeat="todo in todos" ng-click="T.complete(todo)" ng-class="{complete: todo.complete}">
+      <li class="todo-item" ng-repeat="todo in todos | orderBy:'complete'" ng-click="T.complete(todo)" ng-class="{complete: todo.complete}">
         <p><i class="fa" ng-class="{'fa-check-square': todo.complete, 'fa-square': !todo.complete}"></i>{{ todo.title }}</p>
       </li>
     </ul>
