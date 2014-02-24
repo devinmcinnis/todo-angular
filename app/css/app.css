@@ -110,6 +110,11 @@ input {
   background-color: #F3F3F3;
 }
 
+.todo-item.complete {
+  opacity: 0.5;
+  border-bottom: 1px solid #999;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;

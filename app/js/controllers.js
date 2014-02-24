@@ -14,6 +14,11 @@ angular.module('myApp.controllers', []).
       $scope.todos = newVal;
     });
 
+    this.complete = function (todo) {
+      // Toggle 'completeness' of todo item
+      todo.complete = (todo.complete === true) ? false : true;
+    }
+
     return this;
 
   }])

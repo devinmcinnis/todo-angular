@@ -8,7 +8,7 @@
       <i class="fa fa-plus btn btn-dark"></i>
     </form>
     <ul class="todo-content">
-      <li class="todo-item" ng-repeat="todo in todos" ng-click="T.complete(todo)">
+      <li class="todo-item" ng-repeat="todo in todos" ng-click="T.complete(todo)" ng-class="{complete: todo.complete}">
         <p><i class="fa" ng-class="{'fa-check-square': todo.complete, 'fa-square': !todo.complete}"></i>{{ todo.title }}</p>
       </li>
     </ul>
