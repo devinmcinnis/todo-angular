@@ -1,5 +1,115 @@
 /* app css stylesheet */
 
+/* element styling */
+* {
+ -webkit-box-sizing: border-box;
+ -moz-box-sizing: border-box;
+ box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: #F9F9F9;
+  color: #222;
+}
+
+h1, p {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+label {
+  display: block;
+  font-size: 1.15em;
+  margin: 0.5em;
+}
+
+input {
+  font-size: 1em;
+  padding: 0.5em;
+  border: 0px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* helper classes */
+.container {
+  max-width: 25em;
+  margin: 0 auto;
+}
+
+.btn {
+  padding: 0.5em 0.7em;
+  cursor: pointer;
+}
+
+.btn-dark,
+.bg-dark {
+  background-color: #222;
+  color: #F9F9F9;
+}
+
+.btn-dark:hover {
+  background-color: #555;
+}
+
+.fa-square,
+.fa-check-square {
+  margin: 0 0.5em;
+}
+
+.input-group {
+  display: table;
+  margin: 0.5em 0 0;
+}
+
+.input-group input {
+  display: table-cell;
+  width: 100%;
+  padding: 0.5em 0 0.5em 0.5em;
+  margin: 0;
+}
+
+.input-group .btn {
+  display: table-cell;
+  width: 1%;
+  vertical-align: middle;
+}
+
+/* content styling */
+.todo-app {
+  margin-top: 3em;
+}
+
+.todo-head {
+  text-align: center;
+  padding: 0.5em;
+}
+
+.todo-content {
+  margin-left: 0;
+}
+
+.todo-item {
+  padding: 1em 0;
+  cursor: pointer;
+  border-bottom: 1px solid #222;
+}
+
+.todo-item:hover {
+  background-color: #F3F3F3;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
