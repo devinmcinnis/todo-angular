@@ -12,7 +12,17 @@ angular.module('myApp.controllers', []).
       return Todos.collection;
     }, function (newVal) {
       $scope.todos = newVal;
-    });
+
+      // Filter to display how many tasks are left to complete
+      $scope.activeTodos = newVal.filter(function(todo) {
+        if (!todo.complete) {
+          return todo;
+        }
+      });
+
+    // Adding "true" as third parameter tells Angular to watch for
+    // deep-object changes rather than high-level (add/remove)
+    }, true);
 
     this.complete = function (todo) {
       // Toggle 'completeness' of todo item
@@ -27,6 +37,10 @@ angular.module('myApp.controllers', []).
 
     this.deleteTask = function (todo) {
       Todos.deleteTask(todo);
+    };
+
+    this.clearCompleted = function () {
+      Todos.clearCompleted($scope.todos);
     };
 
     return this;

@@ -28,5 +28,13 @@ angular.module('myApp.services', []).
       this.collection.splice(i, 1);
     };
 
+    this.clearCompleted = function (todos) {
+      this.collection = todos.filter(function(todo, i) {
+        if (!todo.complete) {
+          return todo;
+        }
+      });
+    };
+
     return this;
   });

@@ -42,6 +42,18 @@ input {
   appearance: none;
 }
 
+footer {
+  font-size: 0.75em;
+  color: #888;
+  padding: 0.75em 0;
+  overflow: hidden;
+}
+
+footer p {
+  float: left;
+  width: 33.3%;
+}
+
 /* helper classes */
 .container {
   max-width: 25em;
@@ -128,6 +140,33 @@ input {
 
 .todo-delete:hover {
   color: red;
+}
+
+.todo-remaining {
+  text-align: left;
+}
+
+.todo-filter {
+  text-align: center;
+}
+
+.todo-filter span {
+  margin: 0 0.15em;
+  cursor: pointer;
+}
+
+.todo-filter span.active,
+.todo-filter span:hover,
+.todo-clear span:hover {
+  border-bottom: 1px solid #BBB;
+}
+
+.todo-clear {
+  text-align: right;
+}
+
+.todo-clear span {
+  cursor: pointer;
 }
 
 .menu {
