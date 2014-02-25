@@ -23,5 +23,10 @@ angular.module('myApp.services', []).
       cb(todo);
     };
 
+    this.deleteTask = function (todo) {
+      var i = this.collection.indexOf(todo);
+      this.collection.splice(i, 1);
+    };
+
     return this;
   });

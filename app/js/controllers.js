@@ -25,6 +25,10 @@ angular.module('myApp.controllers', []).
       });
     };
 
+    this.deleteTask = function (todo) {
+      Todos.deleteTask(todo);
+    };
+
     return this;
 
   }]);

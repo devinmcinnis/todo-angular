@@ -101,6 +101,7 @@ input {
 }
 
 .todo-item {
+  position: relative;
   padding: 1em 0;
   cursor: pointer;
   border-bottom: 1px solid #222;
@@ -113,6 +114,20 @@ input {
 .todo-item.complete {
   opacity: 0.5;
   border-bottom: 1px solid #999;
+}
+
+.todo-text {
+  margin-right: 1.75em;
+}
+
+.todo-delete {
+  position: absolute;
+  top: 1em;
+  right: 0.5em;
+}
+
+.todo-delete:hover {
+  color: red;
 }
 
 .menu {
