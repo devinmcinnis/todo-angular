@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>My AngularJS App</title>
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
@@ -15,6 +15,37 @@
   -->
 
   <div ng-view></div>
+
+  <script type="text/ng-template" id="partials/partial1.html">
+    <div class="container">
+      <div class="todo-app">
+        <header class="todo-head bg-dark">
+          <h1>Todos</h1>
+        </header>
+        <!-- "ng-submit" will override the default <form> action through AngularJS
+        We can now define an action on our Controller -->
+        <form class="input-group" ng-submit="T.addTask(newTask)">
+          <input type="text" id="addTask" placeholder="What do you need to do?" required ng-model="newTask">
+          <i class="fa fa-plus btn btn-dark" ng-click="T.addTask(newTask)"></i>
+        </form>
+        <ul class="todo-content">
+          <li class="todo-item" ng-repeat="todo in todos | orderBy:'complete' | filter:footerFilter" ng-click="T.complete(todo)" ng-class="{complete: todo.complete}">
+            <p class="todo-text"><i class="fa" ng-class="{'fa-check-square': todo.complete, 'fa-square': !todo.complete}"></i>{{ todo.title }}</p>
+            <i class="fa fa-trash-o todo-delete" ng-click="T.deleteTask(todo)"></i>
+          </li>
+        </ul>
+        <footer>
+          <p class="todo-remaining">{{ activeTodos.length }} tasks remaining</p>
+          <p class="todo-filter" ng-init="footerFilter = ''">
+            <span ng-click="footerFilter = ''" ng-class="{active: footerFilter === ''}">All</span>
+            <span ng-click="footerFilter = {complete: false}" ng-class="{active: footerFilter.complete === false}">Active</span>
+            <span ng-click="footerFilter = {complete: true}" ng-class="{active: footerFilter.complete === true}">Complete</span>
+          </p>
+          <p class="todo-clear"><span ng-click="T.clearCompleted()">Clear completed<span></p>
+        </footer>
+      </div>
+    </div>
+  </script>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
