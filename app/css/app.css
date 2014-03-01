@@ -1,30 +1,170 @@
 /* app css stylesheet */
 
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+/* element styling */
+* {
+ -webkit-box-sizing: border-box;
+ -moz-box-sizing: border-box;
+ box-sizing: border-box;
 }
 
-.menu:before {
-  content: "[";
+*:focus {
+  outline: none;
 }
 
-.menu:after {
-  content: "]";
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: #F9F9F9;
+  color: #222;
 }
 
-.menu > li {
-  display: inline;
+h1, p {
+  margin: 0;
 }
 
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-  content: "";
+ul {
   padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+label {
+  display: block;
+  font-size: 1.15em;
+  margin: 0.5em;
+}
+
+input {
+  font-size: 1em;
+  padding: 0.5em;
+  border: 0px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+footer {
+  font-size: 0.75em;
+  color: #888;
+  padding: 0.75em 0;
+  overflow: hidden;
+}
+
+footer p {
+  float: left;
+  width: 33.3%;
+}
+
+/* helper classes */
+.container {
+  max-width: 25em;
+  margin: 0 auto;
+}
+
+.btn {
+  padding: 0.5em 0.7em;
+  cursor: pointer;
+}
+
+.btn-dark,
+.bg-dark {
+  background-color: #222;
+  color: #F9F9F9;
+}
+
+.btn-dark:hover {
+  background-color: #555;
+}
+
+.fa-square,
+.fa-check-square {
+  margin: 0 0.5em;
+}
+
+.input-group {
+  display: table;
+  margin: 0.5em 0 0;
+}
+
+.input-group input {
+  display: table-cell;
+  width: 100%;
+  padding: 0.5em 0 0.5em 0.5em;
+  margin: 0;
+}
+
+.input-group .btn {
+  display: table-cell;
+  width: 1%;
+  vertical-align: middle;
+}
+
+/* content styling */
+.todo-app {
+  margin-top: 3em;
+}
+
+.todo-head {
+  text-align: center;
+  padding: 0.5em;
+}
+
+.todo-content {
+  margin-left: 0;
+}
+
+.todo-item {
+  position: relative;
+  padding: 1em 0;
+  cursor: pointer;
+  border-bottom: 1px solid #222;
+}
+
+.todo-item:hover {
+  background-color: #F3F3F3;
+}
+
+.todo-item.complete {
+  opacity: 0.5;
+  border-bottom: 1px solid #999;
+}
+
+.todo-text {
+  margin-right: 1.75em;
+}
+
+.todo-delete {
+  position: absolute;
+  top: 1em;
+  right: 0.5em;
+}
+
+.todo-delete:hover {
+  color: red;
+}
+
+.todo-remaining {
+  text-align: left;
+}
+
+.todo-filter {
+  text-align: center;
+}
+
+.todo-filter span {
+  margin: 0 0.15em;
+  cursor: pointer;
+}
+
+.todo-filter span.active,
+.todo-filter span:hover,
+.todo-clear span:hover {
+  border-bottom: 1px solid #BBB;
+}
+
+.todo-clear {
+  text-align: right;
+}
+
+.todo-clear span {
+  cursor: pointer;
 }

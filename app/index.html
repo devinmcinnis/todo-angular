@@ -10,6 +10,35 @@
 
   <div>Hello Codecore :)</div>
 
+  <script type="text/ng-template" id="index.html">
+    <div class="container">
+      <div class="todo-app">
+        <header class="todo-head bg-dark">
+          <h1>Todos</h1>
+        </header>
+        <form class="input-group">
+          <input type="text" id="addTask" placeholder="What do you need to do?" required>
+          <i class="fa fa-plus btn btn-dark"></i>
+        </form>
+        <ul class="todo-content">
+          <li class="todo-item">
+            <p class="todo-text"><i class="fa"></i>Get to CodeCore Class</p>
+            <i class="fa fa-trash-o todo-delete"></i>
+          </li>
+        </ul>
+        <footer>
+          <p class="todo-remaining">1 tasks remaining</p>
+          <p class="todo-filter">
+            <span>All</span>
+            <span>Active</span>
+            <span>Complete</span>
+          </p>
+          <p class="todo-clear"><span>Clear completed<span></p>
+        </footer>
+      </div>
+    </div>
+  </script>
+
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
