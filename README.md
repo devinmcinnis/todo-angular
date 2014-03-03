@@ -1,4 +1,15 @@
-# angular-seed — the seed for AngularJS apps
+# todo-angular
+
+Took the angular-seed project and built a small Todo app for CodeCore on March 1, 2014.
+
+`lite` branch is a stripped down version of angular-seed from where we started
+`master` branch is the final product
+
+The templates we are using were written inline on `index.html` with `ng-template` so we didn't have to worry about serving files at the workshop.
+
+-----------------------
+
+## angular-seed — the seed for AngularJS apps
 
 This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
 You can use it to quickly bootstrap your angular webapp projects and dev environment for these
