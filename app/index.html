@@ -35,11 +35,11 @@
           </li>
         </ul>
         <footer>
-          <p class="todo-remaining">{{ activeTodos.length }} tasks remaining</p>
-          <p class="todo-filter" ng-init="footerFilter = ''">
-            <span ng-click="footerFilter = ''" ng-class="{active: footerFilter === ''}">All</span>
-            <span ng-click="footerFilter = {complete: false}" ng-class="{active: footerFilter.complete === false}">Active</span>
-            <span ng-click="footerFilter = {complete: true}" ng-class="{active: footerFilter.complete === true}">Complete</span>
+          <p class="todo-remaining">{{ activeTodos }} tasks remaining</p>
+          <p class="todo-filter">
+            <span ng-click="T.setFilter(undefined)" ng-class="{active: footerFilter.complete === undefined}">All</span>
+            <span ng-click="T.setFilter(false)" ng-class="{active: footerFilter.complete === false}">Active</span>
+            <span ng-click="T.setFilter(true)" ng-class="{active: footerFilter.complete}">Complete</span>
           </p>
           <p class="todo-clear"><span ng-click="T.clearCompleted()">Clear completed<span></p>
         </footer>

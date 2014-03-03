@@ -6,22 +6,21 @@ angular.module('myApp.controllers', []).
   controller('Todo', ['$scope', 'Todos', function($scope, Todos) {
     // Data-binding to a Service
     // http://stsc3000.github.io/blog/2013/10/26/a-tale-of-frankenstein-and-binding-to-service-values-in-angular-dot-js/
-    $scope.todos = Todos.collection;
-
     $scope.$watch(function () {
       return Todos.collection;
-    }, function (newVal) {
+    }, function (newVal, oldVal) {
       $scope.todos = newVal;
 
       // Filter to display how many tasks are left to complete
-      $scope.activeTodos = newVal.filter(function(todo) {
+      var items = newVal.filter(function(todo) {
         if (!todo.complete) {
           return todo;
         }
       });
 
-    // Adding "true" as third parameter tells Angular to watch for
-    // deep-object changes rather than high-level (add/remove)
+      $scope.activeTodos = items.length;
+
+    // Adding "true" as third parameter tells Angular to watch for deep-object changes
     }, true);
 
     this.complete = function (todo) {
@@ -41,6 +40,10 @@ angular.module('myApp.controllers', []).
 
     this.clearCompleted = function () {
       Todos.clearCompleted($scope.todos);
+    };
+
+    this.setFilter = function (query) {
+      $scope.footerFilter = { complete: query };
     };
 
     return this;
