@@ -2,7 +2,7 @@
 
 Took the angular-seed project and built a small Todo app for CodeCore on March 1, 2014.
 
-`lite` branch is a stripped down version of angular-seed from where we started
+`lite` branch is a stripped down version of angular-seed from where we started  
 `master` branch is the final product
 
 The templates we are using were written inline on `index.html` with `ng-template` so we didn't have to worry about serving files at the workshop.
